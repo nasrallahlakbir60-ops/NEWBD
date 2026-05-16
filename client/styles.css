@@ -1,0 +1,26 @@
+:root{
+  --bg:#0b0b0b; --card:#0f0f10; --gold:#d4af37; --muted:#cfcfcf;
+}
+*{box-sizing:border-box;font-family:Inter,system-ui,Segoe UI,Arial}
+body{margin:0;background:linear-gradient(180deg,#070707 0%, #0f0f12 100%);color:var(--muted);min-height:100vh}
+.hero{display:flex;align-items:center;justify-content:center;padding:48px;position:relative;z-index:1}
++#bg-video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
++.container{width:100%;max-width:980px;padding:28px;border-radius:16px;backdrop-filter:blur(8px) saturate(120%);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 6px 30px rgba(2,2,2,0.6);border:1px solid rgba(212,175,55,0.06)}
++
++@media (max-width:700px){
++  #bg-video{display:none}
++}
++
+.container h1{color:var(--gold);margin:0 0 8px}
+.lead{color:#bdbdbd;margin-bottom:16px}
+.controls{display:flex;gap:12px;align-items:center}
+input,select{padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--muted);flex:1}
+button{background:linear-gradient(90deg,var(--gold),#f2d57a);border:none;padding:12px 18px;border-radius:12px;cursor:pointer;color:#111;font-weight:700}
+.filters{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+.results{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);transition:transform .18s ease, box-shadow .18s}
+.card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+.card h3{margin:0 0 8px;color:var(--gold)}
+.badge{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:12px;color:var(--muted);margin-right:6px}
+.spinner{width:40px;height:40px;border-radius:50%;border:4px solid rgba(255,255,255,0.06);border-top-color:var(--gold);animation:spin 1s linear infinite;margin:20px auto}
+@keyframes spin{to{transform:rotate(360deg)}}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CookBook — Assistant IA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <video id="bg-video" autoplay muted loop playsinline poster="assets/bg-poster.jpg">
+    <source src="assets/background.mp4" type="video/mp4">
+    <source src="assets/background.webm" type="video/webm">
+  </video>
+
+  <main class="hero">
+    <section class="container glass">
+      <h1>Assistant IA — CookBook</h1>
+      <p class="lead">Tapez vos ingrédients séparés par des virgules (ex: poulet, fromage, tomate)</p>
+
+      <div class="controls">
+        <input id="ingredients" placeholder="poulet, riz, tomate" autocomplete="off" />
+        <select id="cuisine">
+          <option value="any">Cuisine (any)</option>
+          <option>Française</option>
+          <option>Italienne</option>
+          <option>Asiatique</option>
+          <option>Marocaine</option>
+        </select>
+        <button id="suggest">Suggérer ✨</button>
+      </div>
+
+      <div id="filters" class="filters">
+        <label><input type="checkbox" id="vegan"> Vegan</label>
+        <label><input type="checkbox" id="glutenFree"> Sans gluten</label>
+        <label>Temps max: <input id="maxTime" type="number" placeholder="min"/></label>
+      </div>
+
+      <div id="results" class="results"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
